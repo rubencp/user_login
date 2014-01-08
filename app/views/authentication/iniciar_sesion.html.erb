@@ -1,0 +1,15 @@
+<p>Iniciar Sesion</p>
+<%= form_for @user, :as => :user, :url => iniciar_sesion_path(@user) do |f| %>
+  <p>
+    <%= f.label 'Nombre o email:' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label 'password:' %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit 'Iniciar Sesion' %>&nbsp;&nbsp;&nbsp;
+    <%= f.submit 'Borrar', :type => 'reset' %>
+  </p>
+<% end %>

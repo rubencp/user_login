@@ -1,4 +1,18 @@
 LogUsuarios::Application.routes.draw do
+
+  
+  root :to=>"home#index"
+
+  post "iniciar_sesion" => "authentication#log_in"
+  get "iniciar_sesion" => "authentication#iniciar_sesion"
+  get "cerrar_sesion" => "authentication#cerrar_sesion"
+  
+  post "nuevo_usuario" => "authentication#nuevo_usuario"
+  get "nuevo_usuario" => "authentication#nuevo_usuario"
+  put "nuevo_usuario" => "authentication#nuevo_usuario"
+  
+  resources :users
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
